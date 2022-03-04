@@ -23,8 +23,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #000000;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
   }
 
 `;
