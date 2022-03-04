@@ -1,11 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Container } from "./styles";
+import Logo from "../../Assets/Home/netflix_logo.png";
+import { Container, Header, Content, Form } from "./styles";
 
 const Login: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <Container>
-      <h1>Login</h1>
+      <Header>
+        <img src={Logo} alt="Netflix Clone" />
+      </Header>
+
+      <Content>
+        <Form>
+          <div className="title">
+            <h1>Entrar</h1>
+          </div>
+
+          <form>
+            <div className="form">
+              <input
+                type="text"
+                name="email"
+                id="email"
+                placeholder="Digite seu email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="*******"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+
+              <button type="button">Entrar</button>
+
+              <div className="remmember">
+                <div className="check">
+                  <input type="checkbox" name="" id="" />
+                  <label htmlFor="" />
+                </div>
+
+                <a href="/#">Precisa de ajuda?</a>
+              </div>
+            </div>
+          </form>
+        </Form>
+      </Content>
     </Container>
   );
 };
