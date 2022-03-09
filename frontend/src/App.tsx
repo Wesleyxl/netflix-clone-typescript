@@ -9,8 +9,10 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <GlobalStyles />
+
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
