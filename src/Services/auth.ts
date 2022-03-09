@@ -4,14 +4,19 @@ export const isAuthenticated = () => localStorage.getItem("token") !== null;
 
 export const getToken = () => localStorage.getItem("token");
 
-export const login = (access_token: string) => {
+export const login = async (access_token: string) => {
   localStorage.setItem("token", access_token);
-  auth.me();
+
+  const response = await auth.me();
+
+  localStorage.setItem("user", response);
 };
 
 export const logout = () => {
   localStorage.removeItem("id");
+
   localStorage.removeItem("token");
+
   localStorage.removeItem("user");
 };
 

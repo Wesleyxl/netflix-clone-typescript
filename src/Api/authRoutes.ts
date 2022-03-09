@@ -4,6 +4,7 @@ export const authRoutes = {
   login: async (email: string, password: string) => {
     const body = {
       email,
+
       password,
     };
 

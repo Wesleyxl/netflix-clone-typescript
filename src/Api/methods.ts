@@ -1,20 +1,23 @@
 import { BASE_URL } from "../env";
-import { getToken } from "../Services/auth";
 
 interface IBodyParams {
   email: string;
+
   password: string;
 }
 
-const access_token = getToken;
+const access_token = localStorage.getItem("token");
 
 export const apiFetchPublicGet = async (endpoint: string) => {
   const resp = await fetch(`${BASE_URL + endpoint}`, {
     method: "GET",
+
     headers: {
       Accept: "application/json",
+
       "Content-Type": "application/json",
     },
+
     body: "",
   });
 
@@ -26,9 +29,12 @@ export const apiFetchPublicGet = async (endpoint: string) => {
 export const apiFetchGet = async (endpoint: string) => {
   const resp = await fetch(`${BASE_URL + endpoint}`, {
     method: "GET",
+
     headers: {
       Accept: "application/json",
+
       "Content-Type": "application/json",
+
       Authorization: `Bearer ${access_token}`,
     },
   });
@@ -41,11 +47,15 @@ export const apiFetchGet = async (endpoint: string) => {
 export const apiFetchPost = async (endpoint: string, body: IBodyParams) => {
   const resp = await fetch(`${BASE_URL + endpoint}`, {
     method: "POST",
+
     headers: {
       Accept: "application/json",
+
       "Content-Type": "application/json",
+
       Authorization: `Bearer ${access_token}`,
     },
+
     body: JSON.stringify(body),
   });
 

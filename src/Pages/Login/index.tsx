@@ -10,7 +10,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const hanlderSubmit = async (e: any) => {
+  const handlerSubmit = async (e: { preventDefault: () => void; }) => {
     setLoading(true);
     e.preventDefault();
 
@@ -35,7 +35,7 @@ const Login: React.FC = () => {
       </Header>
 
       <Content>
-        <Form onSubmit={(e) => hanlderSubmit}>
+        <Form onSubmit={handlerSubmit}>
           <div className="title">
             <h1>Entrar</h1>
           </div>
