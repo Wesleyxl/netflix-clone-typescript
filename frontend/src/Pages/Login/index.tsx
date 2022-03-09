@@ -5,6 +5,7 @@ import { Container, Header, Content, Form } from "./styles";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
 
   return (
@@ -29,6 +30,7 @@ const Login: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
               />
+
               <input
                 type="password"
                 name="password"
@@ -40,10 +42,11 @@ const Login: React.FC = () => {
 
               <button type="button">Entrar</button>
 
-              <div className="remmember">
+              <div className="remember">
                 <div className="check">
-                  <input type="checkbox" name="" id="" />
-                  <label htmlFor="" />
+                  <input type="checkbox" name="remember" id="remember" />
+
+                  <label htmlFor="remember">Lembre-se de mim</label>
                 </div>
 
                 <a href="/#">Precisa de ajuda?</a>

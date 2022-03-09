@@ -34,7 +34,6 @@ export const Header = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
   img {
     max-width: 160px;
   }
