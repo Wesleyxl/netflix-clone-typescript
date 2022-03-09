@@ -1,11 +1,12 @@
 import { BASE_URL } from "../env";
+import { getToken } from "../Services/auth";
 
 interface IBodyParams {
   email: string;
   password: string;
 }
 
-const access_token = "";
+const access_token = getToken;
 
 export const apiFetchPublicGet = async (endpoint: string) => {
   const resp = await fetch(`${BASE_URL + endpoint}`, {

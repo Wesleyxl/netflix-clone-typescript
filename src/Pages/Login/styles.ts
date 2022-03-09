@@ -84,4 +84,60 @@ export const Form = styled.div`
       font-size: 16px;
     }
   }
+
+  .remember {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+
+    .check {
+      color: #b3b3b3;
+
+      input {
+        width: 13px;
+        height: 13px;
+        margin-right: 5px;
+      }
+    }
+
+    a {
+      margin-top: -15px;
+      color: #b3b3b3;
+      :hover {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .register {
+    margin-top: 35px;
+
+    .top p {
+      display: inline;
+      font-size: 16px;
+      color: #b3b3b3;
+
+      a {
+        color: #ffffff;
+        :hover {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .bottom p {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #b3b3b3;
+
+      a {
+        color: #0071eb;
+        :hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 `;
