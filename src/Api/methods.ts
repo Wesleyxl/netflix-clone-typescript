@@ -1,5 +1,10 @@
 import { BASE_URL } from "../env";
 
+interface IBodyParams {
+  email: string;
+  password: string;
+}
+
 const access_token = "";
 
 export const apiFetchPublicGet = async (endpoint: string) => {
@@ -32,7 +37,7 @@ export const apiFetchGet = async (endpoint: string) => {
   return response;
 };
 
-export const apiFetchPost = async (endpoint: string, body: object) => {
+export const apiFetchPost = async (endpoint: string, body: IBodyParams) => {
   const resp = await fetch(`${BASE_URL + endpoint}`, {
     method: "POST",
     headers: {
